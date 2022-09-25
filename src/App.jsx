@@ -1,6 +1,6 @@
 // Imports
 import "./App.css";
-// import searchIcon from "./search.svg";
+import searchIcon from "./search.svg";
 import { useEffect, useState } from "react";
 import MovieCard from "./Components/MovieCard";
 
@@ -33,9 +33,13 @@ function App() {
             setsearch(e.target.value);
           }}
         />
-        <img src="" alt="search" onClick={() => searchMovies(search)} />
+        <img
+          src={searchIcon}
+          alt="search"
+          onClick={() => searchMovies(search)}
+        />
       </div>
-      {Movies.length > 0 ? (
+      {Movies?.length > 0 ? (
         <div className="container">
           {Movies.map((movie) => (
             <MovieCard movie={movie}></MovieCard>

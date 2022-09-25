@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import MovieCard from "./Components/MovieCard";
 
 // OMDB Movie Data API
-const API_URL = "http://www.omdbapi.com/?apikey=a87458c7";
+const API_URL = "https://www.omdbapi.com/?apikey=a87458c7";
 
 // App component
 function App() {

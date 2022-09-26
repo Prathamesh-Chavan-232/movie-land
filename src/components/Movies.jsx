@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function Movies() {
+export default function MovieDesc() {
   return (
     <div className="page-text">
-      <h1>Movies List page</h1>
+      <h1>Movies Description page</h1>
     </div>
   );
 }

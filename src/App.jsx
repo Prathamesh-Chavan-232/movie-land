@@ -1,57 +1,33 @@
 // Imports
 import "./App.css";
-import searchIcon from "./search.svg";
-import { useEffect, useState } from "react";
-import MovieCard from "./Components/MovieCard";
-
-// OMDB Movie Data API
-const API_URL = "https://www.omdbapi.com/?apikey=a87458c7";
+import { Homepage } from "./pages/Homepage";
+import MovieList from "./pages/MovieList";
+import Movies from "./pages/Movies";
+import { Navbar } from "./components/Navbar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import OldHomepage from "./pages/simplePage";
 
 // App component
 function App() {
-  const [Movies, setMovies] = useState([]);
-  const [search, setsearch] = useState("");
-  const searchMovies = async (title) => {
-    const res = await fetch(`${API_URL}&s=${title}`);
-    const data = await res.json();
-    setMovies(data.Search);
-  };
-
-  useEffect(() => {
-    searchMovies("Avengers");
-  }, []);
-
   return (
-    <div className="app">
-      <h1>Movie Land...</h1>
-      <div className="search">
-        <input
-          type="text"
-          placeholder="Search for movies"
-          value={search}
-          onChange={(e) => {
-            setsearch(e.target.value);
-          }}
-        />
-        <img
-          src={searchIcon}
-          alt="search"
-          onClick={() => searchMovies(search)}
-        />
-      </div>
-      {Movies?.length > 0 ? (
-        <div className="container">
-          {Movies.map((movie) => (
-            <MovieCard movie={movie}></MovieCard>
-          ))}
-        </div>
-      ) : (
-        <div className="empty">
-          <h2>No Movies found</h2>
-        </div>
-      )}
+    <div>
+      <BrowserRouter>
+        <Navbar></Navbar>
+        <Routes>
+          <Route index element={<Homepage></Homepage>}></Route>
+          <Route path="/homepage" element={<Homepage></Homepage>}></Route>
+          <Route path="/movie/:id" element={<MovieList />} />
+          <Route path="/movies/:type" element={<Movies />} />
+          <Route path="/*" element={<Error />} />
+        </Routes>
+      </BrowserRouter>
+      {/* <OldHomepage></OldHomepage> */}
     </div>
   );
 }
 
 export default App;
+
+function Error() {
+  return <div className="page-text">Error 404 - page not found</div>;
+}

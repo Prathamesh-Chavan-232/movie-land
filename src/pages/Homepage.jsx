@@ -1,12 +1,15 @@
 import "../App.css";
+import DisplayCarousel from "../components/DisplayCarousel";
 import { apilinks } from "../api/apiconfig";
 import React, { useEffect, useState } from "react";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
 export const Homepage = () => {
   const fetchPopularMovies = async () => {
-    const res = await fetch(`${apilinks.upcomingMovies}`);
+    const res = await fetch(`${apilinks.topRatedMovies}`);
     const data = await res.json();
     console.log(data.results);
+    setpopularMovies(data.results);
   };
 
   const [popularMovies, setpopularMovies] = useState([]);
@@ -17,8 +20,14 @@ export const Homepage = () => {
   }, []);
 
   return (
-    <div className="page-text">
-      <h1 className="text-center">Home Page</h1>
+    <div className="">
+      {popularMovies?.length > 0 ? (
+        <DisplayCarousel Movies={popularMovies} />
+      ) : (
+        <div>
+          <h2>No Movies Found</h2>
+        </div>
+      )}
     </div>
   );
 };

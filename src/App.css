@@ -90,25 +90,159 @@ select {
 /* Navbar */
 .nav {
   display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+}
+
+.logo {
+  width: 90px;
+  height: 50px;
 }
 
 .left-nav {
   display: flex;
 }
 
-.left-nav a {
+.left-nav a,
+.right-nav a {
   margin: 30px;
   cursor: pointer;
   font-size: 1.3rem;
-  text-decoration: none;
   color: aliceblue;
+  text-decoration: none;
 }
 
 .left-nav a:hover {
   color: red;
 }
 
-.logo {
-  width: 100px;
-  height: 70px;
+.right-nav {
+  display: flex;
+}
+
+/* Home-page */
+
+/* Remove underline from anchor */
+.link {
+  text-decoration: none;
+}
+
+.poster-img {
+  height: 600px;
+}
+
+.poster-img > img {
+  margin: auto;
+  display: block;
+  width: 100%;
+}
+
+.poster-overlay {
+  position: absolute;
+  padding: 5rem;
+  bottom: 0px;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: flex-start;
+  background-image: linear-gradient(rgb(0, 0, 0, 0), rgb(0, 0, 0, 1));
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.poster-overlay:hover {
+  opacity: 1;
+}
+
+.poster-title {
+  font-weight: 900;
+  font-size: 4rem;
+  text-align: left;
+  margin-bottom: 0.4rem;
+}
+
+.poster-info {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.poster-rating {
+  margin-left: 3rem;
+}
+
+.poster-desc {
+  width: 50%;
+  display: flex;
+  font-size: 1rem;
+  text-align: left;
+  font-style: italic;
+  margin-bottom: 0.25rem;
+}
+
+/* Movie cards */
+.cards {
+  display: inline-block;
+  transition: transform 0.2s;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0.19rem;
+  cursor: pointer;
+  min-width: 200px;
+  height: 300px;
+  z-index: 0;
+  border: 1px solid rgb(99, 99, 99);
+}
+
+.cards:hover {
+  transform: scale(1.2);
+  z-index: 1000;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.cards-img {
+  height: 300px;
+}
+
+.cards-overlay {
+  position: absolute;
+  padding: 0 1rem 1rem 1rem;
+  bottom: 0px;
+  height: 290px;
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  justify-content: flex-end;
+  background-image: linear-gradient(rgb(0, 0, 0, 0), rgb(0, 0, 0, 1));
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.cards-overlay:hover {
+  opacity: 1;
+}
+
+.card-title {
+  font-weight: 900;
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.card-info {
+  font-size: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.card-rating {
+  float: right;
+}
+
+.card-description {
+  font-style: italic;
+  font-size: 0.75rem;
+  margin-bottom: 0.25rem;
 }

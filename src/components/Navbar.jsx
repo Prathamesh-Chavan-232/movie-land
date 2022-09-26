@@ -17,6 +17,9 @@ export const Navbar = () => {
         <Link to="/movies/top-rated">Top rated</Link>
         <Link to="/movies/upcoming">Upcoming</Link>
       </div>
+      <div className="right-nav">
+        <Link to="/oldHome">Old version</Link>
+      </div>
     </div>
   );
 };

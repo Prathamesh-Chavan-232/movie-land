@@ -1,7 +1,7 @@
 import "../style.css";
 import searchIcon from "../svgs/search.svg";
 import { useState, useEffect } from "react";
-import MovieCard from "../Components/SimpleMovieCard";
+import MovieCard from "../components/SimpleMovieCard";
 
 // OMDB Movie Data API
 const API_URL = "https://www.omdbapi.com/?apikey=a87458c7";
@@ -19,8 +19,8 @@ export default function OldHomepage() {
   }, []);
 
   return (
-    <div className="app">
-      <h1>Movie Land...</h1>
+    <div className="oldHome">
+      <h1 className="title">Movie Land...</h1>
       <div className="search">
         <input
           type="text"
@@ -37,7 +37,7 @@ export default function OldHomepage() {
         />
       </div>
       {Movies?.length > 0 ? (
-        <div className="container">
+        <div className="box">
           {Movies.map((movie) => (
             <MovieCard movie={movie}></MovieCard>
           ))}

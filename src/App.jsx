@@ -1,11 +1,11 @@
 // Imports
 import "./App.css";
+import Movies from "./components/Movies";
 import { Homepage } from "./pages/Homepage";
-import MovieList from "./pages/MovieList";
-import Movies from "./pages/Movies";
+import OldHomepage from "./pages/simplePage";
 import { Navbar } from "./components/Navbar";
+import MovieList from "./components/MovieList";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import OldHomepage from "./pages/simplePage";
 
 // App component
 function App() {
@@ -18,6 +18,7 @@ function App() {
           <Route path="/homepage" element={<Homepage></Homepage>}></Route>
           <Route path="/movie/:id" element={<MovieList />} />
           <Route path="/movies/:type" element={<Movies />} />
+          <Route path="/oldHome" element={<OldHomepage />} />
           <Route path="/*" element={<Error />} />
         </Routes>
       </BrowserRouter>

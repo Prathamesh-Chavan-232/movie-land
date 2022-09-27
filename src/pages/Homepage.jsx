@@ -1,7 +1,8 @@
 import "../App.css";
-import DisplayCarousel from "../components/DisplayCarousel";
 import { apilinks } from "../api/apiconfig";
+import { MovieList } from "../components/MovieList";
 import React, { useEffect, useState } from "react";
+import DisplayCarousel from "../components/DisplayCarousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
 export const Homepage = () => {
@@ -28,6 +29,7 @@ export const Homepage = () => {
           <h2>No Movies Found</h2>
         </div>
       )}
+      <MovieList></MovieList>
     </div>
   );
 };

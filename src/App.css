@@ -217,7 +217,6 @@ select {
   flex-direction: column;
   width: 85%;
   justify-content: flex-end;
-  background-image: linear-gradient(rgb(0, 0, 0, 0), rgb(0, 0, 0, 1));
   opacity: 0;
   transition: opacity 0.2s;
 }
@@ -245,4 +244,19 @@ select {
   font-style: italic;
   font-size: 0.75rem;
   margin-bottom: 0.25rem;
+}
+
+.movie-list {
+  padding: 0 3rem 3rem 3rem;
+}
+
+.list-title {
+  font-size: 1.75rem;
+  margin: 2.5rem;
+}
+
+.list-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }

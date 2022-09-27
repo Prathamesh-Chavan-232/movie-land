@@ -1,6 +1,6 @@
 import { apilinks } from "../api/apiconfig";
 import Card from "./Card";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { useParams } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
@@ -8,7 +8,7 @@ export const MovieList = () => {
   const { type } = useParams();
   const [Movies, setMovies] = useState([]);
 
-  const fetchMovies = async () => {
+  const fetchMovies = useCallback(async () => {
     let res;
     if (type === "upcoming") {
       res = await fetch(`${apilinks.upcomingMovies}`);
@@ -20,14 +20,14 @@ export const MovieList = () => {
     const data = await res.json();
     console.log(data.results);
     setMovies(data.results);
-  };
+  });
   // Fetch Movies Data from the api
   useEffect(() => {
     fetchMovies();
-  }, []);
+  }, [fetchMovies]);
   useEffect(() => {
     fetchMovies();
-  }, [type]);
+  }, [fetchMovies, type]);
   return (
     <div className="movie-list">
       <h2 className="movie-list-title">

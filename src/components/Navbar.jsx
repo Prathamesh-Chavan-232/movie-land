@@ -18,7 +18,7 @@ export const Navbar = () => {
         <Link to="/movies/upcoming">Upcoming</Link>
       </div>
       <div className="right-nav">
-        <Link to="/oldHome">Old version</Link>
+        <a href="https://www.google.com">Old version</a>
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
-import { apilinks } from "../api/apiconfig";
 import Card from "./Card";
-import React, { useEffect, useState } from "react";
+import { apilinks } from "../api/apiconfig";
 import { useParams } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
 export const MovieList = () => {
@@ -35,9 +35,7 @@ export const MovieList = () => {
 
   return (
     <div className="movie-list">
-      <h2 className="movie-list-title">
-        {(type ? type : "popular").toUpperCase()}
-      </h2>
+      <h2 className="list-title">{(type ? type : "popular").toUpperCase()}</h2>
       <div className="list-cards">
         {Movies.map((movie) => (
           <Card movie={movie}></Card>

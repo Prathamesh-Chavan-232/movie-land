@@ -26,6 +26,7 @@ export default function Cards({ movie }) {
         </div>
       ) : (
         <Link
+          className="link"
           to={`/movie/${movie.id}`}
           style={{ textDecoration: "none", color: "white" }}
         >
@@ -49,7 +50,7 @@ export default function Cards({ movie }) {
                 </span>
               </div>
               <div className="cards-description">
-                {movie ? movie.overview.slice(0, 110) + "..." : ""}
+                {movie ? movie.overview.slice(0, 30) + "..." : ""}
               </div>
             </div>
           </div>

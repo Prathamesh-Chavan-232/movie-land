@@ -7,7 +7,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 
 export const Homepage = () => {
   const fetchPopularMovies = async () => {
-    const res = await fetch(`${apilinks.topRatedMovies}`);
+    const res = await fetch(`${apilinks.popularMovies}`);
     const data = await res.json();
     console.log(data.results);
     setpopularMovies(data.results);

@@ -31,7 +31,7 @@ export default function DisplayCarousel({ Movies }) {
                 {movie ? movie.release_date : "Not available"}
                 <span className="poster-rating">
                   {movie ? movie.vote_average : "Not available"}
-                  <i className="fa fa-star"> </i>
+                  <i className="fas fa-star"> </i>
                 </span>
               </div>
               <div className="poster-desc">

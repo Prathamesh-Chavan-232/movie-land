@@ -1,8 +1,7 @@
 // Imports
 import "./App.css";
-import MovieDesc from "./components/Movies";
+import MovieDesc from "./components/MovieDesc";
 import { Homepage } from "./pages/Homepage";
-import OldHomepage from "./pages/simplePage";
 import { Navbar } from "./components/Navbar";
 import { MovieList } from "./components/MovieList";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -18,7 +17,6 @@ function App() {
           <Route path="/homepage" element={<Homepage></Homepage>}></Route>
           <Route path="/movie/:id" element={<MovieDesc />} />
           <Route path="/movies/:type" element={<MovieList />} />
-          <Route path="/oldHome" element={<OldHomepage />} />
           <Route path="/*" element={<Error />} />
         </Routes>
       </BrowserRouter>

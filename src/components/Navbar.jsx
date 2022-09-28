@@ -15,7 +15,7 @@ export const Navbar = () => {
         </Link>
         <Link to="/movies/popular">Popular</Link>
         <Link to="/movies/top-rated">Top rated</Link>
-        <Link to="/movies/upcoming">Upcoming</Link>
+        <Link to="/movies/upcoming">Upcoming movie</Link>
       </div>
       <div className="right-nav">
         <a href="https://www.google.com">Old version</a>

@@ -18,7 +18,7 @@ export const Navbar = () => {
         <Link to="/movies/upcoming">Upcoming movie</Link>
       </div>
       <div className="right-nav">
-        <a href="https://www.google.com">Old version</a>
+        <a href="https://movies-website-old.netlify.app/">Old version</a>
       </div>
     </div>
   );
